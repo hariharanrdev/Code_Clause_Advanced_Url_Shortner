@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+</head>
+<body>
+    <h1>Analytics for {{ url.short_url }}</h1>
+    <p>Original URL: {{ url.original_url }}</p>
+    <p>Total Visits: {{ url.visits }}</p>
+    <h2>Visit Details</h2>
+    <ul>
+        {% for visit in visits %}
+            <li>Timestamp: {{ visit.timestamp }} | User Agent: {{ visit.user_agent }} | IP Address: {{ visit.ip_address }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Dashboard</a>
+</body>
+</html>
